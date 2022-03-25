@@ -15,6 +15,13 @@ elseif ispc
     tmp_fns = dir(fullfile(dngDir, '*.dng'));
 end
 
+
+% added by yanlin
+% support rw2
+if length(tmp_fns)==0
+     tmp_fns = dir(fullfile(dngDir, '*.RW2'));
+end
+
 n = numel(tmp_fns);
 image_filenames = cell(n, 1);
 for i = 1 : numel(tmp_fns)
